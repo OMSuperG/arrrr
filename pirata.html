@@ -5,7 +5,8 @@
 	<title>Movie Time</title>
 </head>
 <body>
-<input id="url" type="text" ><button onclick="changeSource(document.getElementById('url').value)">GO!</button><br/>
+<input id="url" type="text" ><button onclick="changeSource(document.getElementById('url').value)">GO!</button>
+<button onclick="openFullscreen()">Fullscreen</button><br/>
 	<video controls id="pirata">
 		<source id="fuente" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
 	</video>
@@ -16,6 +17,17 @@
         source.setAttribute('src', vid);
         getVideo.load()
     }
+
+	function openFullscreen() {
+		var elem = document.getElementById("pirata");
+	  if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	  } else if (elem.webkitRequestFullscreen) { /* Safari */
+		elem.webkitRequestFullscreen();
+	  } else if (elem.msRequestFullscreen) { /* IE11 */
+		elem.msRequestFullscreen();
+	  }
+	}
 </script>
 </body>
 </html>
