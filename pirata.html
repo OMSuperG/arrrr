@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movie Time</title>
+</head>
+<body>
+<input id="url" type="text" ><button onclick="changeSource(document.getElementById('url').value)">GO!</button><br/>
+	<video controls id="pirata">
+		<source id="fuente" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+	</video>
+<script type="text/javascript">
+    function changeSource(vid) {
+		var getVideo = document.getElementById("pirata");
+		var source = document.getElementById("fuente");
+        source.setAttribute('src', vid);
+        getVideo.load()
+    }
+</script>
+</body>
+</html>

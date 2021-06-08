@@ -11,6 +11,11 @@ app.get('/', function(request, response) {
 		root : __dirname
 	});
 });
+app.get('/pirata', function(request, response) {
+	response.sendFile('pirata.html', {
+		root : __dirname
+	});
+});
 app.get('*', function(request, response) {
 	response.sendFile('404.html', {
 		root : __dirname
