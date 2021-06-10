@@ -7,12 +7,7 @@ var server = http;
 app.set('port', (process.env.PORT || 3333));
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', function(request, response) {
-	response.sendFile('index.html', {
-		root : __dirname
-	});
-});
-app.get('/pirata', function(request, response) {
-	response.sendFile('pirata.html', {
+	response.sendFile('pirata2.html', {
 		root : __dirname
 	});
 });
