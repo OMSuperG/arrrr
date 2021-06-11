@@ -2,8 +2,8 @@
 // start up
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io').listen(http)
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 var server = http;
 app.set('port', (process.env.PORT || 3333));
 app.use('/public', express.static(__dirname + '/public'));

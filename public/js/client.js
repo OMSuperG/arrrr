@@ -1,4 +1,4 @@
-var socket = io.connect();
+var socket = io();
 
 function pauseAll() {
     socket.emit('pause_all', {})
