@@ -1,16 +1,18 @@
 var socket = io.connect();
-var getVideo = document.getElementById("pirata");
 
 function resumeAll() {
-    socket.emit('resume_all', position)
+    var getVideo = document.getElementById("pirata");
+    var position = getVideo.currentTime;
+    socket.emit('resume_all', position);
 }
 
 function pauseAll() {
-    socket.emit('pause_all', {})
+    socket.emit('pause_all', {});
 }
 
 function changeSource(vid) {
     var source = document.getElementById("fuente");
+    var getVideo = document.getElementById("pirata");
     source.setAttribute('src', vid);
     getVideo.load()
 }
@@ -27,10 +29,12 @@ function openFullscreen() {
 }
 
 socket.on('resume', function(position){
-    getVideo.currentTime = position
+    var getVideo = document.getElementById("pirata");
+    getVideo.currentTime = position;
     getVideo.play();
 });
 
 socket.on('pause', function(){
+    var getVideo = document.getElementById("pirata");
     getVideo.pause();
 });
