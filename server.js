@@ -53,7 +53,7 @@ function addUser(id, socket){
 
 function removeUser(id){
     for (var i=0;i<users.length;i++){
-        if(users[i].id == socket.id){
+        if(users[i].id == id){
             users.splice(i,1);
             break;
         }
