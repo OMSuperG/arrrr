@@ -7,15 +7,16 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
 	<link rel="manifest" href="public/favicon/site.webmanifest">
+	<link rel="stylesheet" type="text/css" href="public/css/estilos.css">
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/public/js/client.js?version=3"></script>
 </head>
 <body>
 <input id="url" type="text" >
-<button onclick="changeSource(document.getElementById('url').value)">GO!</button>
-<button onclick="resumeAll()">Resume All</button>
-<button onclick="pauseAll()">Pause All</button>
-<button onclick="openFullscreen()">Fullscreen</button><br/>
+<button id="go_button" onclick="changeSource(document.getElementById('url').value)">GO!</button>
+<button id="resume_button" onclick="resumeAll()">Resume All</button>
+<button id="pause_button" onclick="pauseAll()">Pause All</button>
+<button id="fullscreen_button" onclick="openFullscreen()">Fullscreen</button><br/>
 	<video controls id="pirata">
 		<source id="fuente" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
 	</video>
