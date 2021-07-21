@@ -10,14 +10,27 @@
 	<link rel="stylesheet" type="text/css" href="public/css/estilos.css">
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/public/js/client.js?version=3"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<input id="url" type="text" >
-<button id="go_button" onclick="changeSource(document.getElementById('url').value)">GO!</button>
-<button id="resume_button" onclick="resumeAll()">Resume All</button>
-<button id="pause_button" onclick="pauseAll()">Pause All</button>
-<button id="fullscreen_button" onclick="openFullscreen()">Fullscreen</button><br/>
-	<video controls id="pirata">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<input id="url" type="text" >
+			<button id="go_button" onclick="changeSource(document.getElementById('url').value)" style="margin: 10px;">GO!</button>
+		</div>
+		<div class="col-sm-8">
+			<button id="resume_button" onclick="resumeAll()">Resume All</button>
+			<button id="pause_button" onclick="pauseAll()" style="margin: 10px;">Pause All</button>
+			<button id="fullscreen_button" onclick="openFullscreen()">Fullscreen</button><br/>
+		</div>
+	</div>
+</div>
+	<video controls id="pirata" width="100%">
 		<source id="fuente" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
 	</video>
 </body>
